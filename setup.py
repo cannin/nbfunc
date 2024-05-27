@@ -6,7 +6,7 @@ import io
 import re
 import os
 from setuptools import find_packages, setup
-from nbfunc import __version__
+from nbnofun import __version__
 
 DEPENDENCIES = ['nbconvert']
 EXCLUDE_FROM_PACKAGES = ["contrib", "docs", "test*"]
@@ -17,18 +17,18 @@ with io.open(os.path.join(CURDIR, "README.md"), "r", encoding="utf-8") as f:
 
 
 setup(
-    name="nbfunc",
+    name="nbnofun",
     version=__version__,
     author="cannin",
-    description="Check Jupyter notebooks for Python functions",
+    description="Check Jupyter notebooks in current directory for Python functions; exit with error if found.",
     long_description=README,
     long_description_content_type="text/markdown",
-    url="https://github.com/cannin/nbfunc",
+    url="https://github.com/cannin/nbnofun",
     packages=find_packages(exclude=EXCLUDE_FROM_PACKAGES),
     include_package_data=True,
     keywords=[],
     scripts=[],
-    entry_points={"console_scripts": ["nbfunc=nbfunc.__main__:main"]},
+    entry_points={"console_scripts": ["nbnofun=nbnofun.__main__:main"]},
     zip_safe=False,
     install_requires=DEPENDENCIES,
     #test_suite="tests.test_project",
