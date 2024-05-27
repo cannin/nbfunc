@@ -1,4 +1,5 @@
 import os
+import sys
 import re
 from nbconvert import ScriptExporter
 from traitlets.config import Config
@@ -25,16 +26,15 @@ def main():
     # Process each .ipynb file in the current directory
     for file_name in os.listdir('.'):
         if file_name.endswith('.ipynb'):
-            print(f"Processing {file_name}...")
             script = convert_notebook_to_script(file_name)
             functions = find_python_functions(script)
             
             if functions:
-                print(f"Functions found in {file_name}:")
                 for function in functions:
-                    print(function)
-            else:
-                print("No functions found.")
+                    print(f"{file_name}: {function}")
+                    sys.exit(1)
+            else: 
+                sys.exit(0)
 
 if __name__ == '__main__':
     main()
