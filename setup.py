@@ -6,7 +6,7 @@ import io
 import re
 import os
 from setuptools import find_packages, setup
-from h5adcat import __version__
+from nbfunc import __version__
 
 DEPENDENCIES = ['nbconvert']
 EXCLUDE_FROM_PACKAGES = ["contrib", "docs", "test*"]
