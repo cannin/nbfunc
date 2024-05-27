@@ -8,7 +8,7 @@ import os
 from setuptools import find_packages, setup
 from nbnofun import __version__
 
-DEPENDENCIES = ['nbconvert']
+DEPENDENCIES = ['nbconvert', 'ipython']
 EXCLUDE_FROM_PACKAGES = ["contrib", "docs", "test*"]
 CURDIR = os.path.abspath(os.path.dirname(__file__))
 
