@@ -26,7 +26,7 @@ def find_python_functions(script):
 
 
 def main():
-    functions_found = False
+    functions_flag = False
 
     # Process each .ipynb file in the current directory
     for file_name in os.listdir('.'):
@@ -37,10 +37,12 @@ def main():
             functions = find_python_functions(script)
 
             if functions:
+                functions_flag = True
+
                 for function in functions:
                     print(f"{file_name}: {function}")
 
-    if functions_found:
+    if functions_flag:
         sys.exit(1)
 
 
