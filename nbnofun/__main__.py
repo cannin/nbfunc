@@ -30,18 +30,19 @@ def main():
 
     # Process each .ipynb file in the current directory
     for file_name in os.listdir('.'):
-        print(f"Processing file: {file_name}")
-
         if file_name.endswith('.ipynb'):
+            print(f"Processing file: {file_name}")
+
             script = convert_notebook_to_script(file_name)
             functions = find_python_functions(script)
-        
+
             if functions:
                 for function in functions:
                     print(f"{file_name}: {function}")
-    
+
     if functions_found:
         sys.exit(1)
+
 
 if __name__ == '__main__':
     main()
